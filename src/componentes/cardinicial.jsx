@@ -1,5 +1,23 @@
-export function cardinicial() {
-    return(<div className=" max-w-103 bg-gradient-dark p-6 rounded-2xl text-white font-overpass">
+import iconStar from "./assets/icon-star.svg"
+
+export function CardInicial({nota, setNota, setSubmited}) {
+  function handleTrocarNota(nota) {
+    setNota(nota)
+  }
+    
+  function handleSubmit() {
+    if (nota !== 0) {
+      setSubmited(true)
+      return
+    }
+    alert("Please, select a rate button!")
+
+
+
+
+  }
+    return(
+    <div className=" max-w-103 bg-gradient-dark p-6 rounded-2xl text-white font-overpass">
     <div className="bg-dark-blue p-4 w-fit rounded-full mb-4">
       <img src={iconStar} alt="" />
     </div>
@@ -10,7 +28,7 @@ export function cardinicial() {
 
     <div className="flex justify-between mb-6">
 
-      <input type="button" value={1} className="bg-dark-blue w-10.5 h-10.5 rounded-full text-medium-grey text-sm font-bold focus:bg-medium-grey focus:text-white hover:bg-orange hover:text-white sm:w-13 sm:h-13 cursor-pointer" onClick={() => handleTrocarNota(1)} />
+      
 
       <input type="button" value={2} className="bg-dark-blue w-10.5 h-10.5 rounded-full text-medium-grey text-sm font-bold focus:bg-medium-grey focus:text-white hover:bg-orange hover:text-white sm:w-13 sm:h-13 cursor-pointer" onClick={() => handleTrocarNota(2)} />
 

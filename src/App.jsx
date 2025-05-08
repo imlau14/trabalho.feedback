@@ -1,4 +1,4 @@
-import iconStar from "./assets/icon-star.svg"
+
 import illustrationThankyou from "./assets/illustration-thank-you.svg"
 import { useState } from "react"
 
@@ -7,25 +7,11 @@ export function App() {
   const [nota, setNota] = useState(0);
   const [submited, setSubmited] = useState(false)
 
-  function handleTrocarNota(nota) {
-    setNota(nota)
-
-    console.log(nota)
-  }
-
-  function handleSubmit() {
-    if (nota !== 0) {
-      setSubmited(true)
-      return
-    }
-
-    alert("Por favor, escolha uma nota!")
-  }
 
 
   return (
     submited === false ? (
-      
+   <CardInicial nota={nota} setNota={setNota} setSubmited={setSubmited} />  
     ) : (
       <div className=" max-w-103 bg-gradient-dark p-6 rounded-2xl text-white font-overpass text-center">
 
